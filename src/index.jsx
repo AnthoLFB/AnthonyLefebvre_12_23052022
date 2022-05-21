@@ -15,6 +15,7 @@ import Error from './pages/Error';
 //CSS
 import "./styles/global/Reset.css";
 import "./styles/global/Font.css";
+import "./styles/responsive/global.css";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
