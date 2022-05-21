@@ -32,7 +32,7 @@ root.render(
         {/*Réglage*/}
         <Route path="/setting" element={<Setting/>}></Route>
 
-        {/*Réglage*/}
+        {/*Communauté*/}
         <Route path="/community" element={<Community/>}></Route>
 
         {/*Erreur*/}
