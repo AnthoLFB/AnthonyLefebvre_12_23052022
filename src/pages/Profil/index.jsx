@@ -4,12 +4,12 @@ import React from 'react';
 //Composants
 import Header from '../../components/Header';
 
-function Home() {
+function Profil() {
   return (
     <React.Fragment>
-        <Header/>
+       <Header/>
     </React.Fragment>
   );
 }
 
-export default Home;
+export default Profil;
