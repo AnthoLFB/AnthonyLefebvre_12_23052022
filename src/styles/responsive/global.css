@@ -1,0 +1,9 @@
+/* ---- limitation de taille pour les ultrawide screen ---- */
+@media (min-width: 2560px) 
+{
+    body
+    {
+        max-width: 2560px;
+        margin: 0 auto;
+    }
+}
