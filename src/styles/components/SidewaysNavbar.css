@@ -57,3 +57,11 @@
     margin-left: -15px;
     margin-bottom: 80px;
 }
+
+/*Lorsque la barre de navigation est affichée, alors on décale le contenu principal pour pouvoir voir celui-ci.*/
+
+main
+{
+    /* = width de la navbar */
+    margin-left: 120px;
+}

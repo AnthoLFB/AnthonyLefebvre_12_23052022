@@ -1,0 +1,22 @@
+.userIdentity
+{
+    width: calc(100% - 200px);
+    margin: 50px 100px;
+}
+
+.userIdentity__title
+{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.userIdentity__title__name
+{
+    color: #FF0101;
+}
+
+.userIdentity__catchphrase
+{
+    font-size: 18px;
+}
