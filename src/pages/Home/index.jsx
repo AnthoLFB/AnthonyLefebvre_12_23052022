@@ -7,19 +7,23 @@ import SidewaysNavbar from '../../components/SidewaysNavbar';
 import UserIdentity from '../../components/UserIdentity';
 
 //Classes
-import {repositoryFactory} from '../../repositories/repository_factory';
+import {createUserRepository} from '../../repositories/repository_factory'
 
 function Home() {
 
-  const [userData, setUserData] = useState({});
+  const [userPersonalData, setUserPersonalData] = useState({});
   const [isDataLoading, setStatement] = useState(false); 
 
   useEffect(() => {
-    repositoryFactory(12)
-   .then(setUserData)
-   .then(() => {setStatement(true)});
+
+    //Recovery of personal data about the user
+    const userRepository = createUserRepository();
+    userRepository.getUserById(12)
+    .then((data) => {setUserPersonalData(data.data.USER_MAIN_DATA);})
+    .then(() => {setStatement(true)});
   }, []);
 
+  //As long as the data are not loaded, a loader is displayed on the screen
   if(!isDataLoading)
   {
     return (
@@ -33,12 +37,13 @@ function Home() {
     );
   }
 
+  //Once the data has been loaded, then the content can be displayed
   return (
     <React.Fragment>
         <Header/>
         <SidewaysNavbar/>
         <main>
-          <UserIdentity name={userData[0].data.USER_MAIN_DATA.userInfos.firstName}/>
+          <UserIdentity name={userPersonalData.userInfos.firstName}/>
         </main>
     </React.Fragment>
   );
