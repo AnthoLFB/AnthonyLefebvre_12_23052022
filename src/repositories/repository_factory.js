@@ -1,13 +1,10 @@
-import UserRepository from "./inMemory/user_repository";
+import inMemoryUserRepository from "./inMemory/user_repository";
 
 /**
  * Function to centralize class imports.  It allows to easily change the data call. (Mocked or API)
- * @param {int} userId - user's ID. The id will allow to retrieve the data of a specific user 
- * @returns {Promise.all} Returns a series of promises containing the user's information.
+ * @returns {new inMemoryUserRepository} Returns the class that handles the data call.
  * */
-export function repositoryFactory(userId)
+export function createUserRepository()
 {
-    return Promise.all([
-        new UserRepository(userId).getUserById(),
-    ]);
-} 
+    return new inMemoryUserRepository();
+}
