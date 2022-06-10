@@ -1,6 +1,7 @@
 //React
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+
 
 //Router
 import { BrowserRouter as Router, Routes as RoutesList, Route } from 'react-router-dom';
@@ -17,9 +18,7 @@ import "./styles/global/Reset.css";
 import "./styles/global/Font.css";
 import "./styles/responsive/global.css";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <Router>
       <RoutesList>
@@ -41,5 +40,6 @@ root.render(
         
       </RoutesList>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
