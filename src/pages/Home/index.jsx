@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
 import SidewaysNavbar from '../../components/SidewaysNavbar';
 import UserIdentity from '../../components/UserIdentity';
+import DailyActivityChart from '../../components/DailyActivityChart';
 
 //Classes
 import {createUserRepository} from '../../repositories/repository_factory'
@@ -12,14 +13,21 @@ import {createUserRepository} from '../../repositories/repository_factory'
 function Home() {
 
   const [userPersonalData, setUserPersonalData] = useState({});
+  const [userActivity, setUserActivity] = useState({});
   const [isDataLoading, setStatement] = useState(false); 
 
   useEffect(() => {
 
+
     //Recovery of personal data about the user
     const userRepository = createUserRepository();
-    userRepository.getUserById(12)
-    .then((data) => {setUserPersonalData(data.data.USER_MAIN_DATA);})
+    
+    
+    Promise.all([userRepository.getUserById(12), userRepository.getUserActivity(12)])
+    .then((dataReceived) => {
+      setUserPersonalData(dataReceived[0].data.USER_MAIN_DATA);
+      setUserActivity(dataReceived[1].data.USER_ACTIVITY);
+    })
     .then(() => {setStatement(true)});
   }, []);
 
@@ -37,6 +45,8 @@ function Home() {
     );
   }
 
+  console.log(userActivity);
+
   //Once the data has been loaded, then the content can be displayed
   return (
     <React.Fragment>
@@ -44,6 +54,7 @@ function Home() {
         <SidewaysNavbar/>
         <main>
           <UserIdentity name={userPersonalData.userInfos.firstName}/>
+          <DailyActivityChart/>
         </main>
     </React.Fragment>
   );
