@@ -6,10 +6,11 @@ import Header from '../../components/Header';
 import SidewaysNavbar from '../../components/SidewaysNavbar';
 import UserIdentity from '../../components/UserIdentity';
 import DailyActivityChart from '../../components/DailyActivityChart';
+import AverageSessionTimeChart from '../../components/AverageSessionTimeChart';
+import ActivityTypeRadarChart from '../../components/ActivityTypeRadarChart';
 
 //Classes
 import {createUserRepository} from '../../repositories/repository_factory'
-import AverageSessionTimeChart from '../../components/AverageSessionTimeChart';
 
 //Css
 import "../../styles/page/Home.css";
@@ -19,6 +20,7 @@ function Home() {
   const [userPersonalData, setUserPersonalData] = useState({});
   const [userActivity, setUserActivity] = useState({});
   const [userAverageSessionTime, setUserAverageSessionTime] = useState({});
+  const [userActivityType, setUserActivityType] = useState({});
   const [isDataLoading, setStatement] = useState(false); 
 
   useEffect(() => {
@@ -28,11 +30,13 @@ function Home() {
     const userRepository = createUserRepository();
     
     
-    Promise.all([userRepository.getUserById(12), userRepository.getUserActivity(12), userRepository.getUserAverageTimeSession(12)])
+    Promise.all([userRepository.getUserById(12), userRepository.getUserActivity(12), userRepository.getUserAverageTimeSession(12), userRepository.getUserActivityType(12)])
     .then((dataReceived) => {
+      console.log(dataReceived)
       setUserPersonalData(dataReceived[0].data.USER_MAIN_DATA);
       setUserActivity(dataReceived[1].data.USER_ACTIVITY.sessions);
       setUserAverageSessionTime(dataReceived[2].data.USER_AVERAGE_SESSIONS.sessions);
+      setUserActivityType(dataReceived[3].data.USER_PERFORMANCE);
     })
     .then(() => {setStatement(true)});
   }, []);
@@ -54,6 +58,7 @@ function Home() {
   console.log(userPersonalData);
   console.log(userActivity);
   console.log(userAverageSessionTime);
+  console.log(userActivityType);
 
   //Once the data has been loaded, then the content can be displayed
   return (
@@ -66,6 +71,7 @@ function Home() {
             <section className='main__data__charts'>
               <DailyActivityChart/>
               <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
+              <ActivityTypeRadarChart activityInformation={userActivityType}/>
             </section>
           </section>
         </main>
