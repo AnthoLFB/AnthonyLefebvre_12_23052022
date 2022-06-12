@@ -1,0 +1,28 @@
+.average-chart-container
+{
+    border-radius: 5px;
+    width: 260px;
+    height: 260px;
+    background: linear-gradient(to right, #FF0000 68%, #e20000 68%);
+}
+
+.average-chart-container__title
+{
+    width: calc(65% - 35px);
+    margin-left: 35px;
+    padding-top: 30px;
+    color: #FFFFFF;
+    font-size: 15px;
+    opacity: 0.5;
+}
+
+.custom-tooltip
+{
+    padding: 5px;
+    background-color: #FFFFFF;
+}
+
+.recharts-tooltip-cursor
+{
+    display: none;
+}
