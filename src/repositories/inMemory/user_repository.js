@@ -19,6 +19,12 @@ class inMemoryUserRepository
         return axios.get("http://localhost:3000/fixtures/averageSessionTime.json")
         .catch(function (error) {console.log("Une erreur est survenue lors de la récupération des données concernant la moyenne de temps des sessions de l'utilisateur ayant l'id " + id + ". Message de l'erreur : " + error)});
     }
+
+    getUserActivityType(id)
+    {
+        return axios.get("http://localhost:3000/fixtures/userActivityType.json")
+        .catch(function (error) {console.log("Une erreur est survenue lors de la récupération des données concernant les activités de l'utilisateur ayant l'id " + id + ". Message de l'erreur : " + error)});
+    }
 }
 
 export default inMemoryUserRepository;
