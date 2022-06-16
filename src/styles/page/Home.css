@@ -1,0 +1,9 @@
+.main__data
+{
+    width: calc(100% - 200px);
+    margin: 50px 100px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
