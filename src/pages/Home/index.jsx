@@ -8,6 +8,7 @@ import UserIdentity from '../../components/UserIdentity';
 import DailyActivityChart from '../../components/DailyActivityChart';
 import AverageSessionTimeChart from '../../components/AverageSessionTimeChart';
 import ActivityTypeRadarChart from '../../components/ActivityTypeRadarChart';
+import AverageScoreRadialBarChart from '../../components/AverageScoreRadialBarChart';
 
 //Classes
 import {createUserRepository} from '../../repositories/repository_factory'
@@ -72,6 +73,7 @@ function Home() {
               <DailyActivityChart/>
               <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
               <ActivityTypeRadarChart activityInformation={userActivityType}/>
+              <AverageScoreRadialBarChart userScore={userPersonalData}/>
             </section>
           </section>
         </main>
