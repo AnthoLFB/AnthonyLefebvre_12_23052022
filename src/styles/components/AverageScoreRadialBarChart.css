@@ -1,14 +1,15 @@
 .score-chart-container
 {
-    width: 320px;
-    height: 320px;
+    width: 260px;
+    height: 260px;
     position: relative;
     background-color: #FBFBFB;
 }
 
 .score-chart-container__title
 {
-    font-weight: 500;
+    height: calc(20% - 24px);
+    font-weight: bold;
     font-size: 15px;
     margin: 24px 0 0 24px;
 }
@@ -20,7 +21,7 @@
     border-radius: 6em;
     background-color: #FFFFFF;
     position: absolute;
-    top: calc(50% - 74px);
+    top: calc(50% - 64px);
     left: calc(50% - 90px);
     display: flex;
     align-items: center;
