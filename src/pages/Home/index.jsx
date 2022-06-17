@@ -70,7 +70,7 @@ function Home() {
           <UserIdentity name={userPersonalData.userInfos.firstName}/>
           <section className='main__data'>
             <section className='main__data__charts'>
-              <DailyActivityChart/>
+              <DailyActivityChart userActivity={userActivity}/>
               <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
               <ActivityTypeRadarChart activityInformation={userActivityType}/>
               <AverageScoreRadialBarChart userScore={userPersonalData}/>
