@@ -1,5 +1,5 @@
 //Recharts
-import {LineChart, Line, XAxis, Tooltip} from "recharts";
+import {LineChart, Line, XAxis, Tooltip, ResponsiveContainer} from "recharts";
 
 //CSS
 import "../styles/components/AverageSessionTimeChart.css";
@@ -23,11 +23,13 @@ function AverageSessionTimeChart({sessionsInformation})
   return (
       <section className="average-chart-container">
           <h1 className="average-chart-container__title">Durée moyenne des sessions</h1>
-          <LineChart width={250} height={200} data={sessionsInformation} margin={{top: 10, right: 10, left: 10, bottom: 0}}>
-              <XAxis dataKey="day" stroke="#fff" dy={5} axisLine={false} tickLine={false} tickFormatter={day => days[day-1]}/>
-              <Tooltip content={<CustomTooltip />}/>
-              <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={{ r: 8 }}/>
-          </LineChart>
+          <ResponsiveContainer width="100%" height="80%">
+            <LineChart data={sessionsInformation} margin={{top: 8, right: 8, left: 8, bottom: 0}}>
+                <XAxis dataKey="day" stroke="#fff" dy={5} axisLine={false} tickLine={false} tickFormatter={day => days[day-1]}/>
+                <Tooltip cursor={false} content={<CustomTooltip />}/>
+                <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" activeDot={{ r: 8 }}/>
+            </LineChart>
+          </ResponsiveContainer>
       </section>
     );
 }
