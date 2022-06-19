@@ -9,9 +9,16 @@ import DailyActivityChart from '../../components/DailyActivityChart';
 import AverageSessionTimeChart from '../../components/AverageSessionTimeChart';
 import ActivityTypeRadarChart from '../../components/ActivityTypeRadarChart';
 import AverageScoreRadialBarChart from '../../components/AverageScoreRadialBarChart';
+import Card from '../../components/Card';
 
 //Classes
-import {createUserRepository} from '../../repositories/repository_factory'
+import {createUserRepository} from '../../repositories/repository_factory';
+
+//Images
+import flame from "../../assets/images/flame.svg";
+import chicken from "../../assets/images/chicken.svg"
+import apple from "../../assets/images/apple.svg"
+import cheeseburger from "../../assets/images/cheeseburger.svg"
 
 //Css
 import "../../styles/page/Home.css";
@@ -33,7 +40,6 @@ function Home() {
     
     Promise.all([userRepository.getUserById(12), userRepository.getUserActivity(12), userRepository.getUserAverageTimeSession(12), userRepository.getUserActivityType(12)])
     .then((dataReceived) => {
-      console.log(dataReceived)
       setUserPersonalData(dataReceived[0].data.USER_MAIN_DATA);
       setUserActivity(dataReceived[1].data.USER_ACTIVITY.sessions);
       setUserAverageSessionTime(dataReceived[2].data.USER_AVERAGE_SESSIONS.sessions);
@@ -56,7 +62,7 @@ function Home() {
     );
   }
 
-  console.log(userPersonalData);
+  console.log(userPersonalData.keyData);
   console.log(userActivity);
   console.log(userAverageSessionTime);
   console.log(userActivityType);
@@ -74,6 +80,12 @@ function Home() {
               <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
               <ActivityTypeRadarChart activityInformation={userActivityType}/>
               <AverageScoreRadialBarChart userScore={userPersonalData}/>
+            </section>
+            <section className='main__data__cards'>
+              <Card color={"red"} icon={flame} type={"Calories"} value={userPersonalData.keyData.calorieCount} unitOfMeasure={"kCal"}/>
+              <Card color={"blue"} icon={chicken} type={"Proteines"} value={userPersonalData.keyData.proteinCount} unitOfMeasure={"g"}/>
+              <Card color={"yellow"} icon={apple} type={"Glucides"} value={userPersonalData.keyData.carbohydrateCount} unitOfMeasure={"g"}/>
+              <Card color={"pink"} icon={cheeseburger} type={"Lipides"} value={userPersonalData.keyData.lipidCount} unitOfMeasure={"g"}/>
             </section>
           </section>
         </main>
