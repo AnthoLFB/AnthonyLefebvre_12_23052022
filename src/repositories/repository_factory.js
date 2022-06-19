@@ -1,4 +1,5 @@
-import inMemoryUserRepository from "./inMemory/user_repository";
+//import inMemoryUserRepository from "./inMemory/user_repository";
+import apiUserRepository from "./api/user_repository";
 
 /**
  * Function to centralize class imports.  It allows to easily change the data call. (Mocked or API)
@@ -6,5 +7,6 @@ import inMemoryUserRepository from "./inMemory/user_repository";
  * */
 export function createUserRepository()
 {
-    return new inMemoryUserRepository();
+    //return new inMemoryUserRepository();
+    return new apiUserRepository();
 }
