@@ -33,17 +33,17 @@ function Home() {
 
   useEffect(() => {
 
+    const userId = 12
 
     //Recovery of personal data about the user
     const userRepository = createUserRepository();
     
-    
-    Promise.all([userRepository.getUserById(12), userRepository.getUserActivity(12), userRepository.getUserAverageTimeSession(12), userRepository.getUserActivityType(12)])
+    Promise.all([userRepository.getUserById(userId), userRepository.getUserActivity(userId), userRepository.getUserAverageTimeSession(userId), userRepository.getUserActivityType(userId)])
     .then((dataReceived) => {
-      setUserPersonalData(dataReceived[0].data.USER_MAIN_DATA);
-      setUserActivity(dataReceived[1].data.USER_ACTIVITY.sessions);
-      setUserAverageSessionTime(dataReceived[2].data.USER_AVERAGE_SESSIONS.sessions);
-      setUserActivityType(dataReceived[3].data.USER_PERFORMANCE);
+      setUserPersonalData(dataReceived[0].data.data);
+      setUserActivity(dataReceived[1].data.data.sessions);
+      setUserAverageSessionTime(dataReceived[2].data.data.sessions);
+      setUserActivityType(dataReceived[3].data.data);
     })
     .then(() => {setStatement(true)});
   }, []);
