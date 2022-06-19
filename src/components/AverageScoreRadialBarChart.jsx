@@ -8,12 +8,14 @@ function AverageScoreRadialBarChart({userScore})
 {
     let score = 0;
 
-    if(userScore.todayScore === "undefined")
+    if(userScore.todayScore === undefined)
     {
-        score = userScore.score
+      score = userScore.score
     }
-
-    score = userScore.todayScore;
+    else
+    {
+      score = userScore.todayScore;
+    }
 
     let userValue = score;
     let maxValue = 1 - score;
