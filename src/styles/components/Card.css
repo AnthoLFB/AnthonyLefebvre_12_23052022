@@ -9,23 +9,16 @@
 {
     background-color: #FBFBFB;
     border-radius: 6px;
-    width: calc(100% - 80px);
-    margin-left: 30px;
-    min-height: calc(25% - 50px - 11px);
-    padding: 25px;
-}
-
-.card:not(:last-child)
-{
-    margin-bottom: 15px;
+    width: calc(100% - 15px);
+    height: calc(20% - 40px);
+    max-height: 90px;
+    padding: 20px 0 20px 15px;
 }
 
 .card__icon-container
 {
     width: 60px;
     height: 60px;
-    min-width: 60px;
-    min-height: 60px;
     border-radius: 6px;
     justify-content: center;
     margin-right: 20px;
@@ -63,36 +56,3 @@
     color: #74798C;
     font-size: 14px;
 }
-
-
-
-
-/*
- small: 576px,
-  medium: 768px,
-  large: 992px,
-  xlarge: 1200px,
-  xxlarge: 1400px,
-  ultrawide: 2560px
-*/
-
-/* ---- Responsive ---- */
-/*@media (max-width: 768px) 
-{
-    .description
-    {
-        flex-direction: column;
-        width: calc(100% - 40px);
-        margin: 50px 20px;
-    }  
-}
-
-
-
-
-
-
-
-
-
-*/

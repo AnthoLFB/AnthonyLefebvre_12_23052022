@@ -1,17 +1,18 @@
 .average-chart-container
 {
+    width: 100%;
+    height: 80%;
+    align-self: end;
     border-radius: 5px;
-    width: 260px;
-    height: 260px;
-    background: linear-gradient(to right, #FF0000 68%, #e20000 68%);
+    background: linear-gradient(to right, #FF0000 72%, #e20000 72%);
 }
 
 .average-chart-container__title
 {
-    width: calc(65% - 35px);
-    height: calc(20% - 20px);
-    margin-left: 35px;
-    padding-top: 20px;
+    width: calc(65% - 15px);
+    height: calc(20% - 15px);
+    margin-left: 15px;
+    padding-top: 15px;
     color: #FFFFFF;
     font-size: 15px;
     opacity: 0.5;

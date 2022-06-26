@@ -1,0 +1,23 @@
+/*
+ small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1400px,
+  ultrawide: 2560px
+*/
+
+/* ---- Responsive ---- */
+@media (min-width: 1400px) 
+{
+  .score-chart-container
+  {
+      height: 100%;
+  }
+
+  .score-chart-container__title
+  {
+      height: calc(20% - 35px);
+      margin-left: 35px;
+  }
+}

@@ -1,0 +1,23 @@
+/*
+ small: 576px,
+  medium: 768px,
+  large: 992px,
+  xlarge: 1200px,
+  xxlarge: 1400px,
+  ultrawide: 2560px
+*/
+
+/* ---- Responsive ---- */
+@media (min-width: 1400px) 
+{
+  .average-chart-container
+  {
+      height: 100%;
+  }
+
+  .average-chart-container__title
+  {
+      width: calc(65% - 35px);
+      margin-left: 35px;
+  }
+}
