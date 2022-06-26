@@ -1,6 +1,9 @@
 //Recharts
 import {LineChart, Line, XAxis, Tooltip, ResponsiveContainer} from "recharts";
 
+//Proptypes
+import PropTypes from 'prop-types';
+
 //CSS
 import "../styles/components/AverageSessionTimeChart.css";
 import "../styles/responsive/components/AverageSessionTimeChart.css";
@@ -34,6 +37,14 @@ function AverageSessionTimeChart({sessionsInformation})
           </ResponsiveContainer>
       </section>
     );
+}
+
+
+AverageSessionTimeChart.propTypes = {
+  sessionsInformation: PropTypes.arrayOf(PropTypes.shape({
+    day: PropTypes.number,
+    sessionLength: PropTypes.number, 
+  }))
 }
 
 export default AverageSessionTimeChart;

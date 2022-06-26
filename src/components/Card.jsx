@@ -1,6 +1,9 @@
 //CSS
 import "../styles/components/Card.css"
 
+//Proptypes
+import PropTypes from 'prop-types';
+
 function Card({color, icon, type, value, unitOfMeasure})
 {
     return (
@@ -15,5 +18,14 @@ function Card({color, icon, type, value, unitOfMeasure})
         </section>
     );
 }
+
+Card.propTypes = {
+    color: PropTypes.string,
+    icon: PropTypes.string,
+    type: PropTypes.string,
+    value: PropTypes.number,
+    unitOfMeasure: PropTypes.string
+}
+  
 
 export default Card

@@ -1,6 +1,9 @@
 //Recharts
 import { PieChart, Pie, ResponsiveContainer} from "recharts";
 
+//Proptypes
+import PropTypes from 'prop-types';
+
 //CSS
 import "../styles/components/AverageScoreRadialBarChart.css";
 import  "../styles/responsive/components/AverageScoreRadialBarChart.css";
@@ -41,10 +44,31 @@ function AverageScoreRadialBarChart({userScore})
               </PieChart>
             </ResponsiveContainer>
         </section>
-      );
+      );    
+}
 
+AverageScoreRadialBarChart.propTypes = {
+  userScore: PropTypes.shape({
 
-    
+      id: PropTypes.number,
+
+      keyData: PropTypes.shape({
+        calorieCount: PropTypes.number,
+        proteinCount: PropTypes.number,
+        carbohydrateCount: PropTypes.number,
+        lipidCount: PropTypes.number,
+      }),
+
+      todayScore: PropTypes.number,
+
+      score: PropTypes.number,
+
+      userInfos: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        age: PropTypes.number,
+      })
+    })
 }
 
 export default AverageScoreRadialBarChart

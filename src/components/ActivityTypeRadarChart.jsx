@@ -1,6 +1,10 @@
 //Rechart
 import {Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer} from "recharts";
 
+//Proptypes
+import PropTypes from 'prop-types';
+
+
 //CSS
 import "../styles/components/ActivityTypeRadarChart.css";
 import  "../styles/responsive/components/ActivityTypeRadarChart.css";
@@ -18,6 +22,17 @@ function ActivityTypeRadarChart({activityInformation})
             </ResponsiveContainer>
         </section>
       );
+}
+
+ActivityTypeRadarChart.propTypes = {
+    activityInformation: PropTypes.shape({
+        userId: PropTypes.number,
+        //kind: ?,
+        data: PropTypes.arrayOf(PropTypes.shape({
+            value: PropTypes.number,
+            kind: PropTypes.number,
+          }))
+      }),
 }
 
 export default ActivityTypeRadarChart;

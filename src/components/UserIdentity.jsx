@@ -1,5 +1,8 @@
 import "../styles/components/UserIdentity.css";
 
+//Proptypes
+import PropTypes from 'prop-types';
+
 function UserIdentity({name})
 {
     return (
@@ -8,6 +11,10 @@ function UserIdentity({name})
             <p className="userIdentity__catchphrase">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </section>
     );
+}
+
+UserIdentity.propTypes = {
+    name: PropTypes.string,
 }
 
 export default UserIdentity;
