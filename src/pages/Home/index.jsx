@@ -62,7 +62,7 @@ function Home() {
     );
   }
 
-  console.log(userPersonalData.keyData);
+  console.log(userPersonalData);
   console.log(userActivity);
   console.log(userAverageSessionTime);
   console.log(userActivityType);
