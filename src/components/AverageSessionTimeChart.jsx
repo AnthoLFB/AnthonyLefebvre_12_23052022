@@ -3,6 +3,7 @@ import {LineChart, Line, XAxis, Tooltip, ResponsiveContainer} from "recharts";
 
 //CSS
 import "../styles/components/AverageSessionTimeChart.css";
+import "../styles/responsive/components/AverageSessionTimeChart.css";
 
 function AverageSessionTimeChart({sessionsInformation})
 {
@@ -23,6 +24,7 @@ function AverageSessionTimeChart({sessionsInformation})
   return (
       <section className="average-chart-container">
           <h1 className="average-chart-container__title">Durée moyenne des sessions</h1>
+          
           <ResponsiveContainer width="100%" height="80%">
             <LineChart data={sessionsInformation} margin={{top: 8, right: 8, left: 8, bottom: 0}}>
                 <XAxis dataKey="day" stroke="#fff" dy={5} axisLine={false} tickLine={false} tickFormatter={day => days[day-1]}/>

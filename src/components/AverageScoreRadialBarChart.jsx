@@ -2,7 +2,8 @@
 import { PieChart, Pie, ResponsiveContainer} from "recharts";
 
 //CSS
-import "../styles/components/AverageScoreRadialBarChart.css"
+import "../styles/components/AverageScoreRadialBarChart.css";
+import  "../styles/responsive/components/AverageScoreRadialBarChart.css";
 
 function AverageScoreRadialBarChart({userScore})
 {
@@ -29,12 +30,14 @@ function AverageScoreRadialBarChart({userScore})
     return (
         <section className="score-chart-container">
             <h1 className="score-chart-container__title">Score</h1>
+
             <div className="score-chart-container__result">
               <p className="score-chart-container__result__text"><span className="score-chart-container__result__score">{score * 100}%</span> de votre objectif</p>
             </div>
+
             <ResponsiveContainer width="100%" height="80%">
               <PieChart>
-                <Pie data={data} dataKey="value" cornerRadius={40} innerRadius={80} outerRadius={90} startAngle={230} endAngle={-230}/>
+                <Pie data={data} dataKey="value" cornerRadius={40} innerRadius="80%" outerRadius="90%" startAngle={230} endAngle={-230}/>
               </PieChart>
             </ResponsiveContainer>
         </section>

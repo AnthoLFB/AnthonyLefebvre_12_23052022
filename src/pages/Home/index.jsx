@@ -74,12 +74,15 @@ function Home() {
         <SidewaysNavbar/>
         <main>
           <UserIdentity name={userPersonalData.userInfos.firstName}/>
+          
           <section className='main__data'>
             <section className='main__data__charts'>
               <DailyActivityChart userActivity={userActivity}/>
-              <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
-              <ActivityTypeRadarChart activityInformation={userActivityType}/>
-              <AverageScoreRadialBarChart userScore={userPersonalData}/>
+              <div className='main__data__charts__group'>
+                <AverageSessionTimeChart sessionsInformation={userAverageSessionTime}/>
+                <ActivityTypeRadarChart activityInformation={userActivityType}/>
+                <AverageScoreRadialBarChart userScore={userPersonalData}/>
+              </div>
             </section>
             <section className='main__data__cards'>
               <Card color={"red"} icon={flame} type={"Calories"} value={userPersonalData.keyData.calorieCount} unitOfMeasure={"kCal"}/>
