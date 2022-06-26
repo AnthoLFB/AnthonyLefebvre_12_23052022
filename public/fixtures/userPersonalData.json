@@ -1,8 +1,8 @@
 {
     "data":    
     {
-        "id": "12",
-        "userInfos": {"firstName": "Albert", "lastName": "Einstein", "age": "76"},
+        "id": 12,
+        "userInfos": {"firstName": "Albert", "lastName": "Einstein", "age": 76},
         "todayScore": 0.35,
         "keyData": {"calorieCount": 1930, "proteinCount": 155, "carbohydrateCount": 290, "lipidCount": 50}
     }
