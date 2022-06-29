@@ -29,20 +29,28 @@ function AverageScoreRadialBarChart({userScore})
       { name: "userValue", value: userValue, fill: "#FF0000" },
       { name: "valueMax", value: maxValue, fill: "#FFFFFF" }
     ];
+
+    const background = 
+    [
+      { name: "valueMax", value: maxValue, fill: "#ffffff" }
+    ];
     
     return (
         <section className="score-chart-container">
             <h1 className="score-chart-container__title">Score</h1>
 
-            <div className="score-chart-container__result">
-              <p className="score-chart-container__result__text"><span className="score-chart-container__result__score">{score * 100}%</span> de votre objectif</p>
-            </div>
+            <div className="score-chart-container__content">
+              <div className="score-chart-container__result">
+                <p className="score-chart-container__result__text"><span className="score-chart-container__result__score">{score * 100}%</span> de votre objectif</p>
+              </div>
 
-            <ResponsiveContainer width="100%" height="80%">
-              <PieChart>
-                <Pie data={data} dataKey="value" cornerRadius={40} innerRadius="80%" outerRadius="90%" startAngle={230} endAngle={-230}/>
-              </PieChart>
-            </ResponsiveContainer>
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart margin={{top: 0, right: 0, left: 0, bottom: 0 }}>
+                  <Pie data={data} dataKey="value" cornerRadius={40} innerRadius="80%" outerRadius="90%" startAngle={230} endAngle={-230}/>
+                  <Pie data={background} dataKey="value" cornerRadius={0} innerRadius="0%" outerRadius="80%" startAngle={230} endAngle={-230} isAnimationActive={false}/>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
         </section>
       );    
 }

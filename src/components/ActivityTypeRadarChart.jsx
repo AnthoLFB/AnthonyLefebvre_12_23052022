@@ -27,7 +27,7 @@ function ActivityTypeRadarChart({activityInformation})
 ActivityTypeRadarChart.propTypes = {
     activityInformation: PropTypes.shape({
         userId: PropTypes.number,
-        //kind: ?,
+        kind: PropTypes.objectOf(PropTypes.string),
         data: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
             kind: PropTypes.number,
