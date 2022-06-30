@@ -4,6 +4,15 @@ import "../styles/components/Card.css"
 //Proptypes
 import PropTypes from 'prop-types';
 
+/**
+ * React component allowing to return an HTML section. This HTML section is displayed as a card and is modular. It can contain an icon, a specific color, a type as well as a value and a unit of measurement specified in parameter.
+ * @param {string} color Color of the icon and the background.
+ * @param {string} icon The icon as an image.
+ * @param {string} type Type of nutrient displayed.
+ * @param {int} value Value to be displayed.
+ * @param {string} unitOfMeasure Unit of measure to be displayed behind the value.
+ * @returns {HTMLElement} React component - Returns an HTML element. The section contains the user's key information.
+ */
 function Card({color, icon, type, value, unitOfMeasure})
 {
     return (

@@ -7,6 +7,10 @@ import logo from "../assets/images/logo.svg";
 //CSS
 import '../styles/components/Header.css';
 
+/**
+ * React component that returns the Header of the site. The Header is composed of the logo, and the navigation bar.
+ * @returns {HTMLElement} React component - Returns an HTML section with the Header of the site. The Header is composed of the logo, and the navigation bar.
+ */
 function Header()
 {
     return (

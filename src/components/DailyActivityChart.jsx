@@ -7,10 +7,15 @@ import PropTypes from 'prop-types';
 //CSS
 import "../styles/components/DailyActivityChart.css";
 
+/**
+ * React component allowing to return an HTML section with the bar chart. This chart summarizes the daily activity of the user.
+ * @param {Object} userActivity Object obtained thanks to a promise. It contains a table with calories, kilograms and the day of the week concerned.
+ * @returns {HTMLElement} React component - Return an HTML section with the bar chart. This chart summarizes the daily activity of the user.
+ */
 function DailyActivityChart({userActivity})
 {
-  console.log(userActivity);
-
+  
+  //Allows you to modify the content of the graph legend when hovering
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -41,6 +46,7 @@ function DailyActivityChart({userActivity})
   );
 }
 
+//Propstypes
 DailyActivityChart.propTypes = {
   userActivity: PropTypes.arrayOf(PropTypes.shape({
     day: PropTypes.string,

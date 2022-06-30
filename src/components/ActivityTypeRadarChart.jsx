@@ -1,14 +1,18 @@
-//Rechart
+//Recharts
 import {Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer} from "recharts";
 
 //Proptypes
 import PropTypes from 'prop-types';
 
-
 //CSS
 import "../styles/components/ActivityTypeRadarChart.css";
 import  "../styles/responsive/components/ActivityTypeRadarChart.css";
 
+/**
+ * React component returning an HTML section with a radar chart
+ * @param {Object} activityInformation Object retrieved via a promise. This object contains the user's id, the types of activities and the personal data of the user according to the types of activities he has done.
+ * @returns {HTMLElement} React component - Returns an HTML element, with a graphic containing the information passed in parameter. This graph is about the user's activity types.
+ */
 function ActivityTypeRadarChart({activityInformation})
 {
     return (
@@ -24,10 +28,15 @@ function ActivityTypeRadarChart({activityInformation})
       );
 }
 
+//Propstypes
 ActivityTypeRadarChart.propTypes = {
+    //Objet
     activityInformation: PropTypes.shape({
+        //user's id
         userId: PropTypes.number,
+        //name of the activity
         kind: PropTypes.objectOf(PropTypes.string),
+        //personal data of the user about the type of activity
         data: PropTypes.arrayOf(PropTypes.shape({
             value: PropTypes.number,
             kind: PropTypes.number,
