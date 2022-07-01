@@ -1,16 +1,16 @@
 # Technologies & Versions
 
-React - 17.0.2
-React-Router - 6.3.0
-Recharts - 2.1.10
-Axios - 0.27.2
+- React - 17.0.2
+- React-Router - 6.3.0
+- Recharts - 2.1.10
+- Axios - 0.27.2
 
 # Installation
 
 ## Required
 
-npm - 8.1.2
-yarn - 1.22.15
+- npm - 8.1.2
+- yarn - 1.22.15
 
 ## Back-end installation
 
