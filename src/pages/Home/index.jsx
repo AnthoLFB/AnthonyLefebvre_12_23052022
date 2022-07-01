@@ -69,11 +69,6 @@ function Home() {
     );
   }
 
-  console.log(userPersonalData);
-  console.log(userActivity);
-  console.log(userAverageSessionTime);
-  console.log(userActivityType);
-
   //Once the data has been loaded, then the content can be displayed
   return (
     <React.Fragment>

@@ -2,29 +2,44 @@ import axios from 'axios';
 
 class apiUserRepository
 {
-    constructor()
-    {
-        console.log(process.env.REACT_APP_API_SERVER_ADDRESS)
-    }
-
+     /**
+     * Function to retrieve the user's data via his id.
+     * @param {int} id user's id
+     * @returns {Promise} Returns a promise containing the user's personal information such as identity, id, daily score, and key data (calories, protein, carbohydrates, lipids) 
+     */
     getUserById(id)
     {
         return axios.get(process.env.REACT_APP_API_SERVER_ADDRESS+"/user/"+id)
         .catch(function (error) {console.log("Une erreur est survenue lors de la récupération des données de l'utilisateur ayant l'id " + id + ". Message de l'erreur : " + error)});
     }
 
+    /**
+     * Function to retrieve the user's weekly data via his Id.
+     * @param {int} id user's id
+     * @returns {Promise} Returns a promise containing the user's personal information, such as user ID, a summary of their sessions for the week with date, kilograms, and calories 
+     */
     getUserActivity(id)
     {
         return axios.get(process.env.REACT_APP_API_SERVER_ADDRESS+"/user/"+id+"/activity")
         .catch(function (error) {console.log("Une erreur est survenue lors de la récupération des données concernant l'activité de l'utilisateur ayant l'id " + id + ". Message de l'erreur : " + error)});
     }
 
+    /**
+     * Function to retrieve data about the average duration of the user's sessions via his Id.
+     * @param {int} id user's id
+     * @returns {Promise} Returns a promise containing the user's personal information, such as their ID, a summary of their sessions for the week with the day and session duration associated with it.
+     */
     getUserAverageTimeSession(id)
     {
         return axios.get(process.env.REACT_APP_API_SERVER_ADDRESS+"/user/"+id+"/average-sessions")
         .catch(function (error) {console.log("Une erreur est survenue lors de la récupération des données concernant la moyenne de temps des sessions de l'utilisateur ayant l'id " + id + ". Message de l'erreur : " + error)});
     }
 
+    /**
+     * Function to retrieve data about the type of activity practiced by the user.
+     * @param {int} id user's id
+     * @returns {Promise} Returns a promise containing the user's personal information, such as ID, available activities, and data about each activity
+     */
     getUserActivityType(id)
     {
         return axios.get(process.env.REACT_APP_API_SERVER_ADDRESS+"/user/"+id+"/performance")
