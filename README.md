@@ -9,8 +9,8 @@
 
 ## Required
 
-npm - 8.1.2
-yarn - 1.22.15
+- npm - 8.1.2
+- yarn - 1.22.15
 
 ## Back-end installation
 
