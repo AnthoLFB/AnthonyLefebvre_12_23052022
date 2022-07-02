@@ -19,7 +19,7 @@ function Header()
             <nav className="header__navbar">
                 <ul className="header__navbar__list">
                     <li className="header__navbar__list__item"><NavLink className="header__navbar__list__item__link" to="/">Accueil</NavLink></li>
-                    <li className="header__navbar__list__item"><NavLink className="header__navbar__list__item__link" to="/profil">Profil</NavLink></li>
+                    <li className="header__navbar__list__item"><NavLink className="header__navbar__list__item__link" to="/profil/12">Profil</NavLink></li>
                     <li className="header__navbar__list__item"><NavLink className="header__navbar__list__item__link" to="/setting">Réglage</NavLink></li>
                     <li className="header__navbar__list__item"><NavLink className="header__navbar__list__item__link" to="/community">Communauté</NavLink></li>
                 </ul>
