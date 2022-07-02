@@ -27,7 +27,7 @@ ReactDOM.render(
         <Route path="/" element={<Home/>}></Route>
         
         {/*Profil*/}
-        <Route path="/profil" element={<Profil/>}></Route>
+        <Route path="/profil/:userId" element={<Profil/>}></Route>
 
         {/*Réglage*/}
         <Route path="/setting" element={<Setting/>}></Route>
