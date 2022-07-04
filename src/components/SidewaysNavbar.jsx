@@ -10,6 +10,10 @@ import weightLiftingLogo from "../assets/images/weightLifting.svg";
 //CSS
 import "../styles/components/SidewaysNavbar.css"
 
+/**
+ * React component that returns the menu on the side of the site.
+ * @returns {HTMLElement} React component - This React component returns the menu on the side of the site. We find in this menu the copyrights, a navigation bar with icons.
+ */
 function SidewaysNavbar()
 {
     return (

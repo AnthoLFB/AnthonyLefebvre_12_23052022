@@ -7,6 +7,16 @@
     background-color: #FBFBFB;
 }
 
+.score-chart-container__content
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
 
 .score-chart-container__title
 {
@@ -20,11 +30,10 @@
 
 .score-chart-container__result
 {
+    z-index: 10;
     position: absolute;
-    top: calc(50% - (80px - 15px));
-    left: calc(50% - 80px);
-    width: 160px;
-    height: 160px;
+    width: 80%;
+    height: 100%;
     border-radius: 6em;
     display: flex;
     align-items: center;

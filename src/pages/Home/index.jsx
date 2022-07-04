@@ -23,8 +23,14 @@ import cheeseburger from "../../assets/images/cheeseburger.svg"
 //Css
 import "../../styles/page/Home.css";
 
+/**
+ * React component that displays the content of the page Home.
+ * @asynch
+ * @returns {HTMLElement} return the content of the page.
+ */
 function Home() {
 
+  //Creation of constants to retrieve data via promises
   const [userPersonalData, setUserPersonalData] = useState({});
   const [userActivity, setUserActivity] = useState({});
   const [userAverageSessionTime, setUserAverageSessionTime] = useState({});
@@ -38,6 +44,7 @@ function Home() {
     //Recovery of personal data about the user
     const userRepository = createUserRepository();
     
+    //We get all the data before displaying them
     Promise.all([userRepository.getUserById(userId), userRepository.getUserActivity(userId), userRepository.getUserAverageTimeSession(userId), userRepository.getUserActivityType(userId)])
     .then((dataReceived) => {
       setUserPersonalData(dataReceived[0].data.data);
@@ -62,7 +69,7 @@ function Home() {
     );
   }
 
-  console.log(userPersonalData.keyData);
+  console.log(userPersonalData);
   console.log(userActivity);
   console.log(userAverageSessionTime);
   console.log(userActivityType);
